@@ -35,7 +35,7 @@ public class AuthenticationTest extends BaseTest {
         signupPage.loginToAccount(validEmail, invalidPassword);
         String actualErrorMessage = signupPage.getLoginErrorMessage();
         Assertions.assertEquals(expectedErrorMessage, actualErrorMessage, "Gösterilen hata mesajı beklenenden farklı!");
-        System.out.println("✅ Başarısız login senaryosu başarıyla test edildi. Hata mesajı doğru.");
+        System.out.println("Başarısız login senaryosu başarıyla test edildi. Hata mesajı doğru.");
     }
 
     @Test
@@ -64,7 +64,7 @@ public class AuthenticationTest extends BaseTest {
         Assertions.assertTrue(currentUrl.contains("/signup"),
                 "Mevcut e-posta ile kayıt denendiğinde bir sonraki sayfaya geçmemeliydi! URL: " + currentUrl);
         System.out.println(
-                "✅ Başarıyla doğrulandı: Mevcut e-posta ile kayıt olmaya çalışınca, sistem ilerlemeye izin vermiyor ve kaydı tamamlama sayfasına yönlendiriyor.");
+                " Başarıyla doğrulandı: Mevcut e-posta ile kayıt olmaya çalışınca, sistem ilerlemeye izin vermiyor ve kaydı tamamlama sayfasına yönlendiriyor.");
     }
 
     @Test
@@ -72,7 +72,7 @@ public class AuthenticationTest extends BaseTest {
         String name = "Test";
         String invalidEmail = "gecersiz-eposta.com";
 
-        // --- DÜZELTME BURADA ---
+      
         String expectedValidationMessageSubstring = "Lütfen e-posta adresine bir \"@\" işareti ekleyin";
 
         homePage.clickSignupLogin();
@@ -88,6 +88,6 @@ public class AuthenticationTest extends BaseTest {
                 actualValidationMessage.contains(expectedValidationMessageSubstring),
                 "Geçersiz e-posta formatı için gösterilen tarayıcı mesajı beklenenden farklı!");
 
-        System.out.println("✅ Geçersiz e-posta formatı uyarısı başarıyla test edildi.");
+        System.out.println(" Geçersiz e-posta formatı uyarısı başarıyla test edildi.");
     }
 }
